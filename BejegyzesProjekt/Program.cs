@@ -9,10 +9,11 @@ namespace BejegyzesProjekt
     internal class Program
     {
         static List<Bejegyzes> lista1 = new List<Bejegyzes>();
-        static List<Bejegyzes> lista2 = new List<Bejegyzes>();
 
         static void Feladat2()
         {
+            Bejegyzes b1 = new Bejegyzes("én", "asdf");
+            Bejegyzes b2 = new Bejegyzes("Gipsz Jakab", "ghjk");
             int darabszam;
             do
             {
@@ -27,12 +28,9 @@ namespace BejegyzesProjekt
 
                 Console.WriteLine("Adja meg az új bejegyzés tartalmát: ");
                 string tartalom = Console.ReadLine();
+
                 Bejegyzes b = new Bejegyzes(szerzo, tartalom);
                 lista1.Add(b);
-            }
-            for (int i = 0; i < lista1.Count; i++)
-            {
-                Console.WriteLine(lista1[i]);
             }
         }
 
