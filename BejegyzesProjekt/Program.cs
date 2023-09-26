@@ -70,24 +70,13 @@ namespace BejegyzesProjekt
                     likeokszamaLista.Add(likeokszama);
                     sum += likeokszama;
                 }
-                Console.WriteLine($"sum: {sum}");
-                Console.WriteLine($"cél: {lista1.Count*20}");
             } while (sum != lista1.Count * 20);
-            Console.WriteLine($"lista1 hossza: {lista1.Count}");
-            Console.WriteLine($"likeokszamaLista hossza: {likeokszamaLista.Count}");
             for (int i = 0; i < lista1.Count; i++) // Végig a listán
             {
                 for (int j = 0; j < likeokszamaLista[i]; j++) // Annyiszor like++, amennyi az adott elemhez tartozik like mennyiségben
                 {
                     lista1[i].Like();
                 }
-            }
-
-            Console.WriteLine("---------------------------");
-            for (int i = 0; i < lista1.Count; i++)
-            {
-                Console.WriteLine(lista1[i].Likeok);
-                Console.WriteLine(lista1[i].Tartalom);
             }
         }
 
