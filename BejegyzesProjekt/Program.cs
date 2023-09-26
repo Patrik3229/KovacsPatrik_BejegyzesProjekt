@@ -44,12 +44,50 @@ namespace BejegyzesProjekt
             StreamReader sr = new StreamReader("bejegyzesek.csv");
             while (!sr.EndOfStream)
             {
-                string sor = Console.ReadLine();
+                string sor = sr.ReadLine();
                 string[] adatok = sor.Split(';');
                 string szerzo = adatok[0];
                 string tartalom = adatok[1];
                 Bejegyzes b = new Bejegyzes(szerzo, tartalom);
                 lista1.Add(b);
+            }
+
+            // d
+
+            int likeokszama = 0;
+            Random r = new Random();
+            int sum = 0;
+            List<int> likeokszamaLista = new List<int>();
+
+            do
+            {
+                likeokszamaLista.Clear();
+                sum = 0;
+                likeokszama = 0;
+                for (int i = 0; i < lista1.Count; i++)
+                {
+                    likeokszama = r.Next(0, lista1.Count*10+1); // Ahány elem, annyi*10+1 (5 esetén ezzel 0 és 50 között generál egy adott tartalomra)
+                    likeokszamaLista.Add(likeokszama);
+                    sum += likeokszama;
+                }
+                Console.WriteLine($"sum: {sum}");
+                Console.WriteLine($"cél: {lista1.Count*20}");
+            } while (sum != lista1.Count * 20);
+            Console.WriteLine($"lista1 hossza: {lista1.Count}");
+            Console.WriteLine($"likeokszamaLista hossza: {likeokszamaLista.Count}");
+            for (int i = 0; i < lista1.Count; i++) // Végig a listán
+            {
+                for (int j = 0; j < likeokszamaLista[i]; j++) // Annyiszor like++, amennyi az adott elemhez tartozik like mennyiségben
+                {
+                    lista1[i].Like();
+                }
+            }
+
+            Console.WriteLine("---------------------------");
+            for (int i = 0; i < lista1.Count; i++)
+            {
+                Console.WriteLine(lista1[i].Likeok);
+                Console.WriteLine(lista1[i].Tartalom);
             }
         }
 
