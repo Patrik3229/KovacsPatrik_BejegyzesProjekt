@@ -24,7 +24,14 @@ namespace BejegyzesProjekt
         }
 
         public string Szerzo { get => szerzo;}
-        public string Tartalom { get => tartalom; set => tartalom = value; }
+        public string Tartalom {
+            get => tartalom;
+            set
+            {
+                tartalom = value;
+                szerkesztve = DateTime.Now;
+            }
+        }
         public int Likeok { get => likeok;}
         public DateTime Letrejott { get => letrejott;}
         public DateTime Szerkesztve { get => szerkesztve; set => szerkesztve = value; }
