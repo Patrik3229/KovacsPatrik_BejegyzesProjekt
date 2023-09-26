@@ -78,6 +78,19 @@ namespace BejegyzesProjekt
                     lista1[i].Like();
                 }
             }
+
+            // e
+
+            Console.WriteLine("Mi legyen a második bejegyzés tartalma?");
+            lista1[1].Tartalom = Console.ReadLine();
+
+            // f
+
+            for (int i = 0; i < lista1.Count; i++)
+            {
+                Console.WriteLine($"\n{lista1[i]}");
+
+            }
         }
 
 
