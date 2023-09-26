@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace BejegyzesProjekt
 {
@@ -12,8 +13,13 @@ namespace BejegyzesProjekt
 
         static void Feladat2()
         {
+            // a
+
             Bejegyzes b1 = new Bejegyzes("én", "asdf");
             Bejegyzes b2 = new Bejegyzes("Gipsz Jakab", "ghjk");
+
+            // b
+
             int darabszam;
             do
             {
@@ -29,6 +35,19 @@ namespace BejegyzesProjekt
                 Console.WriteLine("Adja meg az új bejegyzés tartalmát: ");
                 string tartalom = Console.ReadLine();
 
+                Bejegyzes b = new Bejegyzes(szerzo, tartalom);
+                lista1.Add(b);
+            }
+
+            // c
+
+            StreamReader sr = new StreamReader("bejegyzesek.csv");
+            while (!sr.EndOfStream)
+            {
+                string sor = Console.ReadLine();
+                string[] adatok = sor.Split(';');
+                string szerzo = adatok[0];
+                string tartalom = adatok[1];
                 Bejegyzes b = new Bejegyzes(szerzo, tartalom);
                 lista1.Add(b);
             }
