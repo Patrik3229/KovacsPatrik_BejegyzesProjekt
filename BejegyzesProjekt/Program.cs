@@ -123,6 +123,18 @@ namespace BejegyzesProjekt
             {
                 Console.WriteLine("\nNem volt olyan, ami 35-nél több like-ot kapott.");
             }
+
+            // c
+
+            int kevesebb = 0;
+            for (int i = 0; i < lista1.Count; i++)
+            {
+                if (lista1[i].Likeok < 15)
+                {
+                    kevesebb++;
+                }
+            }
+            Console.WriteLine($"\n15-nél kevesebb like-ot kapottak: {kevesebb}");
         }
 
 
