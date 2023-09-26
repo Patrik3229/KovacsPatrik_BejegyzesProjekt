@@ -89,14 +89,30 @@ namespace BejegyzesProjekt
             for (int i = 0; i < lista1.Count; i++)
             {
                 Console.WriteLine($"\n{lista1[i]}");
-
             }
+        }
+
+        static void Feladat3()
+        {
+            // a
+
+            int legnepszerubb = 0;
+
+            for (int i = 0; i < lista1.Count; i++)
+            {
+                if (lista1[i].Likeok > legnepszerubb)
+                {
+                    legnepszerubb = lista1[i].Likeok;
+                }
+            }
+            Console.WriteLine($"\nLike-ok száma (legnépszerűbb): {legnepszerubb}");
         }
 
 
         static void Main(string[] args)
         {
             Feladat2();
+            Feladat3();
 
             Console.ReadKey();
         }
