@@ -106,6 +106,23 @@ namespace BejegyzesProjekt
                 }
             }
             Console.WriteLine($"\nLike-ok száma (legnépszerűbb): {legnepszerubb}");
+
+            // b
+
+            bool voltolyan = false;
+            for (int i = 0; i < lista1.Count; i++)
+            {
+                if (lista1[i].Likeok > 35)
+                {
+                    Console.WriteLine("\nVolt olyan, ami 35-nél több like-ot kapott.");
+                    i = lista1.Count;
+                    voltolyan = true;
+                }
+            }
+            if (!voltolyan)
+            {
+                Console.WriteLine("\nNem volt olyan, ami 35-nél több like-ot kapott.");
+            }
         }
 
 
